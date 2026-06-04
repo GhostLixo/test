@@ -217,19 +217,20 @@ export function MostrarClans(player, Array_CLans_nomes){// §a Finalizado
 
 
 export function form_ListarMembros(player, arraymembros) {
-     
-    const formMembrosList = new ActionFormData();
     let texto = "";
+    const formMembrosList = new ActionFormData();
+    
     formMembrosList.title("Lista de Membros");
-    if (arrayMembros.length == 0 ){
-        texto = arrayMembros[0];
+    if (arrayMembros.length == 0 || arrayMembros == undefined){
+        player.sendMessage("Não há membros no momento");
+        return;
     }
     else { 
         for (const x in arraymembros){
         texto = texto + `---> ${arraymembros[x]}\n`;
     }  
     }
-    console.log(arrayMembros[0], " dsfdfdsfdsf");
+    console.log(arrayMembros[0]);
     formMembrosList.body(`Veja a Lista dos Membros do clã:\n\n${texto}`);
     formMembrosList.show(player).then((response) => {
         if (response.canceled) return;});
@@ -271,7 +272,8 @@ export function form_promovermembro(player) {
         
 } // falta fazer
 
-export function form_rebaixarmembro(player) {
+export function form_rebaixarmembro(player, membro) {
+
 } // falta fazer
 
 
