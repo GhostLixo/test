@@ -5,7 +5,6 @@
     "@minecraft/server-ui",
     "@minecraft/server-admin",
     "@minecraft/server-editor",
-    "@minecraft/debug-utilities",
-    "@minecraft/server-net"
+    "@minecraft/debug-utilities"
   ]
 }
